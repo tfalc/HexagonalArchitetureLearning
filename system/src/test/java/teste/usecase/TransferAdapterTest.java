@@ -144,7 +144,7 @@ public class TransferAdapterTest {
             var credito = transferPortUseCase.getConta(contaCredito);
             var debito = transferPortUseCase.getConta(contaDebito);
             assertEquals(credito.getSaldo(), cem.add(cinquenta), "Saldo de crédito deve bater");
-            assertEquals(debito.getSaldo(), cem.subtract(cinquenta), "Saldo de crédito deve bater");
+            assertEquals(debito.getSaldo(), cem.subtract(cinquenta), "Saldo de débito deve bater");
             System.out.println("Realizado transferência de R$" + cinquenta +
                     " da conta número " + debito.getNumero() +
                     " do senhor " + debito.getCorrentista() +
