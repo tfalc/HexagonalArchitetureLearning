@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.transaction.annotation.Transactional;
 
 
+import javax.inject.Inject;
 import javax.inject.Named;
 import java.math.BigDecimal;
 
@@ -17,13 +18,18 @@ import static conta.sistema.dominio.model.Erro.*;
 import static java.util.Objects.isNull;
 
 @Named
-@AllArgsConstructor
 @NoArgsConstructor
 @Data
 public class TransferPortUseCaseImpl implements TransferPortUseCase {
 
     private ContaRepository repository;
     private Transferencia transferencia;
+
+    @Inject
+    public TransferPortUseCaseImpl(ContaRepository repository, Transferencia transferencia){
+        this.repository = repository;
+        this.transferencia = transferencia;
+    }
 
     @Override
     public Conta getConta(Integer numero) {
@@ -35,13 +41,13 @@ public class TransferPortUseCaseImpl implements TransferPortUseCase {
     public void transfer(Integer contaDebito, Integer contaCredito, BigDecimal valor) {
         //Validar parametros de entrada
         if(isNull(contaDebito)){
-            obrigatorio("Conta débito é obrigatória.");
+            obrigatorio("Conta débito");
         }
         if(isNull(contaCredito)){
-            obrigatorio("Conta crédito é obrigatória.");
+            obrigatorio("Conta crédito");
         }
         if(isNull(valor)){
-            obrigatorio("Valor é obrigatório.");
+            obrigatorio("Valor");
         }
 
         //Validas as contas
@@ -49,10 +55,10 @@ public class TransferPortUseCaseImpl implements TransferPortUseCase {
         var credito = repository.get(contaCredito);
 
         if(isNull(debito)){
-            inexistente("Conta débito é obrigatória.");
+            inexistente("Conta débito é");
         }
         if(isNull(credito)){
-            inexistente("Conta crédito é obrigatória.");
+            inexistente("Conta crédito é");
         }
 
         if(debito.getNumero().equals(credito.getNumero())){
