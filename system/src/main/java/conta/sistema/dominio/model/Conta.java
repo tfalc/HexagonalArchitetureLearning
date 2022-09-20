@@ -17,7 +17,7 @@ public class Conta {
     private BigDecimal saldo;
     private String correntista;
 
-    public void creditar (BigDecimal credito) throws NegocioException{
+    public void creditar (BigDecimal credito) {
         if(isNull(credito)){
             obrigatorio("Valor crédito");
         }
@@ -29,7 +29,7 @@ public class Conta {
 
     }
 
-    public void debitar (BigDecimal debito) throws NegocioException{
+    public void debitar (BigDecimal debito) {
         if(isNull(debito)){
             obrigatorio("Valor débito");
         }
