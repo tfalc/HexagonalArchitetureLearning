@@ -4,11 +4,9 @@ import conta.sistema.dominio.model.Conta;
 import conta.sistema.dominio.service.Transferencia;
 import conta.sistema.port.ContaRepository;
 import conta.sistema.usecase.port.TransferPortUseCase;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.transaction.annotation.Transactional;
-
 
 import javax.inject.Inject;
 import javax.inject.Named;
