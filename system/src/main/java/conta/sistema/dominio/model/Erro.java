@@ -7,7 +7,7 @@ public class Erro {
     }
 
     public static void inexistente(String name){
-        throw new NegocioException(name + " inexistente");
+        throw new NegocioException(name + " inexistente.");
     }
 
     public static void saldoInsuficiente(){
