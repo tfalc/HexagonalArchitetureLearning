@@ -34,13 +34,36 @@ public class CreditoContaTest {
     }
 
     @Test
-    @DisplayName("Valor de débito maior que crédito")
+    @DisplayName("Valor crédito negativo")
     void testeValorMaior(){
         try{
-            contaValida.debitar(BigDecimal.valueOf(200));
-            fail("Saldo insuficiente.");
+            contaValida.creditar(BigDecimal.valueOf(-10));
+            fail("Valor crédito é obrigatório.");
         }catch (NegocioException e){
-            assertEquals(e.getMessage(), "Saldo insuficiente.");
+            assertEquals(e.getMessage(), "Valor crédito é obrigatório.");
+        }
+    }
+
+    @Test
+    @DisplayName("Valor crédito zero")
+    void testeValorZero(){
+        try{
+            contaValida.creditar(BigDecimal.valueOf(0));
+            fail("Valor crédito é obrigatório.");
+        }catch (NegocioException e){
+            assertEquals(e.getMessage(), "Valor crédito é obrigatório.");
+        }
+    }
+
+    @Test
+    @DisplayName("Valor crédito válido")
+    void testeValorValido(){
+        try{
+            contaValida.creditar(BigDecimal.ONE);
+            var saldoFinal = cem.add(BigDecimal.ONE);
+            assertEquals(contaValida.getSaldo(), saldoFinal, "Saldo deve bater");
+        }catch (NegocioException e){
+            fail("Deve creditar com sucesso - " + e.getMessage());
         }
     }
 }
