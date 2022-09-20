@@ -30,9 +30,9 @@ public class ContaFakeAdapterImpl implements ContaRepository {
 
     @Override
     public void alterar(Conta conta) {
-        System.out.println("Fake conta -> get(Conta conta)");
+        System.out.println("Fake conta -> alterar(Conta conta)");
         var contaTeste = banco.get(conta.getNumero());
-        if(isNull(contaTeste)){
+        if(!isNull(contaTeste)){
             banco.put(conta.getNumero(), conta);
         }else{
             throw new NegocioException("Conta inexistente: " + conta.getNumero());
