@@ -17,6 +17,6 @@ module conta.desktop {
     //Screens and Builds
     opens conta.tela;
     opens conta.dsv;
-    opens conta.hml;
-    opens conta.prd;
+    //opens conta.hml;
+    //opens conta.prd;
 }
