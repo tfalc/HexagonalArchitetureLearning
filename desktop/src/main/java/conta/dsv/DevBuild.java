@@ -13,5 +13,5 @@ import org.springframework.context.annotation.Configuration;
         //Fake adapters
         "conta.adapter"
 })
-public class SecondBuild {
+public class DevBuild {
 }
