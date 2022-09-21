@@ -82,7 +82,7 @@ public class TransferenciaFrm {
         pn.setHgap(10);
         pn.setVgap(10);
 
-        pn.getChildren().add(new Label(" Conta Débito:"));
+        pn.getChildren().add(new Label(" Conta debitada:"));
         tfDebito = new TextField();
         tfDebito.setPrefWidth(50);
         tfDebito.focusedProperty().addListener((o, v, n) -> {
@@ -96,7 +96,7 @@ public class TransferenciaFrm {
         tfNomeDebito.setEditable(false);
         pn.getChildren().add(tfNomeDebito);
 
-        pn.getChildren().add(new Label(" Conta Crédito:"));
+        pn.getChildren().add(new Label(" Conta creditada:"));
         tfCredito = new TextField();
         tfCredito.setPrefWidth(50);
         tfCredito.focusedProperty().addListener((o, v, n) -> {
@@ -130,7 +130,7 @@ public class TransferenciaFrm {
     }
 
     public void mostrar(Stage stage) {
-        stage.setTitle("Adaptador JavaFX");
+        stage.setTitle("Transferência entre contas");
         var scene = new Scene(montarTela(), 500, 100);
         stage.setScene(scene);
         stage.show();
