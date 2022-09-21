@@ -2,6 +2,7 @@ package conta.tela;
 
 import conta.dsv.DevBuild;
 import conta.hml.HomolBuild;
+import conta.prd.ProdBuild;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import org.springframework.context.ApplicationContext;
@@ -22,6 +23,7 @@ public class JavaFxAdapter extends Application {
         System.out.println("Iniciando o Spring...");
         spring = new AnnotationConfigApplicationContext(DevBuild.class);
         //spring = new AnnotationConfigApplicationContext(HomolBuild.class);
+        //spring = new AnnotationConfigApplicationContext(ProdBuild.class);
     }
 
     public static void main(String[] args) {
