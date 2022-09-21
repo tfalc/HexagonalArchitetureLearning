@@ -26,6 +26,17 @@
             </systemPath>
         </dependency>
 
+        <!-- Conta Serviços -->
+        <dependency>
+            <groupId>conta.servicos</groupId>
+            <artifactId>conta.sistema</artifactId>
+            <version>1.0.0</version>
+            <scope>system</scope>
+            <systemPath>
+                Z:/TIC/git/HexagonalLearning/HexagonalArchitetureLearning/servicos/out/artifacts/servico/servico.jar
+            </systemPath>
+        </dependency>
+
         <!-- JavaFx -->
         <dependency>
             <groupId>org.openjfx</groupId>
@@ -58,6 +69,20 @@
             <artifactId>lombok</artifactId>
             <version>1.18.24</version>
             <scope>compile</scope>
+        </dependency>
+
+        <!-- Spring Jdbc -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>5.3.22</version>
+        </dependency>
+
+        <!-- hsqldb -->
+        <dependency>
+            <groupId>org.hsqldb</groupId>
+            <artifactId>hsqldb</artifactId>
+            <version>2.7.0</version>
         </dependency>
     </dependencies>
 
