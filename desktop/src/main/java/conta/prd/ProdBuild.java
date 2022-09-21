@@ -29,7 +29,7 @@ public class ProdBuild {
     @Bean
     public DataSource dataSource() {
         var db = new SimpleDriverDataSource();
-        db.setDriverClass((Class<? extends Driver>) SimpleDriverDataSource.class);
+        db.setDriverClass(org.hsqldb.jdbcDriver.class);
         db.setUrl("fooBar");
         db.setUsername("sa");
         db.setPassword("pass");
