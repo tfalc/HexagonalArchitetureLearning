@@ -27,3 +27,4 @@ hs_err_pid*
 system/.idea/*
 desktop/.idea/*
 servicos/.idea/*
+servicos/target/*
